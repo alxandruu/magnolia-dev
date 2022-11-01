@@ -1,0 +1,9 @@
+label: Automatic Document Link List
+ 
+form:
+  properties:
+       
+    targetNode:
+      $type: damLinkField
+      label: Document Folder
+      description:  Choose a document folder to link to.

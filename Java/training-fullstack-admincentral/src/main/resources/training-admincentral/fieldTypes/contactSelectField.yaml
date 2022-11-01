@@ -1,0 +1,2 @@
+factoryClass: info.magnolia.training.fullstack.admincentral.ux.form.ContactSelectFieldFactory
+definitionClass: info.magnolia.training.fullstack.admincentral.ux.form.ContactSelectFieldDefinition

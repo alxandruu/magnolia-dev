@@ -1,0 +1,7 @@
+workspace: events
+nodeTypes:
+- event
+fullTextSearch: true
+titleProperty: location
+class: info.magnolia.periscope.search.jcr.JcrSearchResultSupplierDefinition
+appName: events

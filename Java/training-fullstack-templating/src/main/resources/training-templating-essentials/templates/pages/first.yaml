@@ -1,0 +1,9 @@
+title: Training Templating Essentials
+renderType: freemarker
+dialog: training-templating-essentials:pages/first
+templateScript: /training-templating-essentials/templates/pages/first.ftl
+areas:
+  main:
+    availableComponents:
+      documentDownloadList:
+        id: training-templating-essentials:components/documentDownloadList

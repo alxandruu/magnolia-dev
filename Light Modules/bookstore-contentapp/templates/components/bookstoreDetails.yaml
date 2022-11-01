@@ -1,0 +1,4 @@
+title: Bookstore Details
+renderType: freemarker
+templateScript: /bookstore-contentapp/templates/components/bookstoreDetails.ftl
+      

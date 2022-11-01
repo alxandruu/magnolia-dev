@@ -1,0 +1,47 @@
+
+# Origin OTB config. Added for backward compatibility.
+# I see only micro sites as use cases
+'enableAll': 'false'
+
+# Origin OTB config. Added for backward compatibility.
+# is very static
+'enableTemplates': 'false'
+'templates':
+  'home':
+    'id': 'training-templating-website:pages/home'
+  'default':
+    'id': 'training-templating-website:pages/default'
+  'special':
+    'id': 'training-templating-website:pages/special'
+  'events':
+    'id': 'training-events-contentapp:pages/events'
+
+# Origin OTB config. Added for backward compatibility.
+# for all 'freemarker' -> none 'site' templates
+'enableByRenderType': 'false'
+'enableAllWithRenderType':
+  'freemarker': 'freemarker'
+
+#Custom implementation
+'enableHierarchy': 'true'
+'hierarchy':
+  'levelsEnabled': 'false'
+  'parentsEnabled': 'true'
+  'levels':
+    # using more dynamic template types
+    '1': 'training-redirect'
+    '2': 'training-redirect'
+    '3': 'training-home'
+    '4': 'training-default; training-events'
+    '5': 'training-default; training-special'
+    '6-12': 'training-default'
+  'parents':
+    'travel-demo:pages/home': 'ROOT'
+    'tours:pages/categoryOverview': 'travel-demo:pages/home'
+    'tours:pages/destinationCatOverview': 'travel-demo:pages/home'
+    'tours:pages/tour': 'travel-demo:pages/home'
+    'travel-demo:pages/pur': 'travel-demo:pages/standard'
+    'travel-demo:pages/aboutDemo': 'travel-demo:pages/standard'
+    'travel-demo:pages/searchResultPage': 'travel-demo:pages/standard'
+    'travel-demo:pages/standard': 'travel-demo:pages/home; travel-demo:pages/standard'
+    

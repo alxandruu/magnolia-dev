@@ -1,0 +1,4 @@
+title: Events List
+renderType: freemarker
+templateScript: /training-events-contentapp/templates/components/eventsList.ftl
+      

@@ -1,0 +1,11 @@
+areas:
+  main:
+    availableComponents:
+      booksList:
+        id: books-contentapp:components/booksList
+      bookDetails:
+        id: books-contentapp:components/bookDetails
+      
+    
+ 
+  

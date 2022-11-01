@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sv:node xmlns:sv="http://www.jcp.org/jcr/sv/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" sv:name="showCaseModuleConfigs">
+  <sv:property sv:name="jcr:primaryType" sv:type="Name">
+    <sv:value>mgnl:contentNode</sv:value>
+  </sv:property>
+  <sv:node sv:name="showCaseSubBean1">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>mgnl:contentNode</sv:value>
+    </sv:property>
+    <sv:property sv:name="weCanDefineInHere" sv:type="String">
+      <sv:value>Cool 1</sv:value>
+    </sv:property>
+    <sv:property sv:name="whateverWeNeed" sv:type="String">
+      <sv:value>Voila 1</sv:value>
+    </sv:property>
+  </sv:node>
+  <sv:node sv:name="showCaseSubBean2">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>mgnl:contentNode</sv:value>
+    </sv:property>
+    <sv:property sv:name="weCanDefineInHere" sv:type="String">
+      <sv:value>Cool 2</sv:value>
+    </sv:property>
+    <sv:property sv:name="whateverWeNeed" sv:type="String">
+      <sv:value>Voila 2</sv:value>
+    </sv:property>
+  </sv:node>
+</sv:node>
+

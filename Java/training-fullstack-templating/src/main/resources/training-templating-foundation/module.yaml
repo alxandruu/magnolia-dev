@@ -1,0 +1,6 @@
+version: 1.0.0
+dependencies:
+  core:
+    version: 6.2.0/*
+  contacts:
+    version: 1.8.0/*  

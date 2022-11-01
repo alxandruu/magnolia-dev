@@ -1,0 +1,45 @@
+## Import css and js into ftl.
+${resfn.css("/training-templating-foundation.*css")}
+${resfn.js("/training-templating-foundation.*js")}
+
+${resfn.css(["/training-templating-foundation/.*css", "/training-templating-essentials/.*css"])}
+${resfn.js(["/training-templating-foundation/.*js", "/training-templating-essentials/.*js"])}
+
+## Enable Magnolia Actions, should always be on ftl.
+[@cms.page /]
+
+## List subnodes of a node.
+<ul>
+	[#list cmsfn.children(node) as child]
+		<li><a href="${cmsfn.link(child)!}">${child.text!child.@name}</a></li>
+	[/#list]
+</ul>
+
+## JAVA | Get a value from content node.
+content.getProperty(nombre).getString();
+
+## Access data from a content APP.
+[#assign eventsRoot = cmsfn.contentByPath("/", "events")!]
+[#assign events = cmsfn.children(eventsRoot,"event")![]]
+
+[#assign events = navfn.navItemsFromApp("events", "/", "event")]
+
+[#list events as event]
+[/#list]
+
+## Access Properties of a node in ftl.
+${node.@uuid}
+
+## Example YAML Configuration of a module.
+form:
+  properties:
+    - name: "name"
+      field:
+        $type: linkField
+        editable: false
+        datasource:
+          $type: jcrDatasource
+          workspace: tours
+    - name: showTourTypes
+      $type: checkBoxField
+      defaultValue: true	

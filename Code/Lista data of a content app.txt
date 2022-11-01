@@ -1,0 +1,17 @@
+ <div class='container'>
+     
+    [#assign eventsRoot = cmsfn.contentByPath("/", "events")!]
+    [#assign events = cmsfn.children(eventsRoot,"event")![]]
+     
+    [#list events]
+        <ul class="list-group">
+            <li class="list-group-item active">Total events: ${events?size} </li>
+            [#items as event]
+                [#if event.name?has_content]
+                    <li class="list-group-item"><small>Event #${event_index+1}: </small> ${event.name} [#if event.date?has_content][${event.date?string["dd.MM.YY"]}][/#if]</li>
+                [/#if]
+            [/#items]
+        </ul>
+    [/#list]
+ 
+</div> 

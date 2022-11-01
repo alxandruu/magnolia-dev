@@ -1,0 +1,13 @@
+label: Automatic Page Link List
+ 
+form:
+  properties:
+    targetNode:
+      $type: pageLinkField
+      label: Page
+      description: Choose a page to link to.
+      required: true
+    text:
+      $type: textField
+      label: Text Field
+      description: Define a text here.

@@ -1,0 +1,34 @@
+label: Teaser Dialog
+ 
+form:
+  properties:
+    imageLink:
+      $type: damLinkField
+      label: Image Link
+      description: Choose an Image from the Assets App.
+    imageCaption:
+      $type: textField
+      label: Image Caption
+      description: Define a caption for the image.
+    targetPageLink:
+      $type: pageLinkField
+      label: Page
+      description: Choose a page to link to.
+      required: false
+      
+
+  layout:
+    $type: tabbedLayout
+    tabs:
+      tabImage:
+        label: Image Content
+        fields:
+          - name: imageLink
+          - name: imageCaption
+
+      tabLinks:
+        label: Links Content
+        fields:
+          - name: targetPageLink     
+ 
+    

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sv:node xmlns:sv="http://www.jcp.org/jcr/sv/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" sv:name="travel-demo">
+  <sv:property sv:name="jcr:primaryType" sv:type="Name">
+    <sv:value>mgnl:folder</sv:value>
+  </sv:property>
+  <sv:property sv:name="jcr:uuid" sv:type="String">
+    <sv:value>85d24779-f21c-45cd-a1a3-69863e546827</sv:value>
+  </sv:property>
+  <sv:node sv:name="templates">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>mgnl:folder</sv:value>
+    </sv:property>
+    <sv:property sv:name="jcr:uuid" sv:type="String">
+      <sv:value>b6bf9860-2a71-4ee9-977d-57e425a6cc0e</sv:value>
+    </sv:property>
+    <sv:node sv:name="components">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>mgnl:folder</sv:value>
+      </sv:property>
+      <sv:property sv:name="jcr:uuid" sv:type="String">
+        <sv:value>fd2fb2d5-a50b-44b0-ab3b-87b041840683</sv:value>
+      </sv:property>
+      <sv:node sv:name="textImage.ftl">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>mgnl:content</sv:value>
+        </sv:property>
+        <sv:property sv:name="jcr:uuid" sv:type="String">
+          <sv:value>9226f477-1368-49c1-a33e-faa4834d99c6</sv:value>
+        </sv:property>
+        <sv:property sv:name="mgnl:lastModified" sv:type="Date">
+          <sv:value>2021-10-25T10:14:18.718+02:00</sv:value>
+        </sv:property>
+        <sv:property sv:name="mgnl:lastModifiedBy" sv:type="String">
+          <sv:value>superuser</sv:value>
+        </sv:property>
+        <sv:property sv:name="text" sv:type="String">
+          <sv:value>[#-------------- INCLUDE AND ASSIGN PART --------------]
+[#include "/mtk2/templates/includes/init.ftl"]
+[#-- Image --]
+[#-- Basic positioning of an image below or above the text --]
+[#assign imagePosition = content.imagePosition!"below"]
+
+[#-- CSS default --]
+[#if !divClass?has_content]
+    [#assign divClass = "text-section"]
+[/#if]
+
+[#-- Image css classes --]
+[#assign hasImage = false]
+[#assign imageHtml = ""]
+
+[#if content.image?has_content]
+    [#assign rendition = damfn.getRendition(content.image, "original")!]
+    [#if rendition?has_content]
+        [#assign hasImage = true]
+        [#assign divClass = "${divClass} text-image-section"]
+        [#assign imageClass = "content-image-${imagePosition}"]
+        [#include "/travel-demo/templates/macros/imageResponsive.ftl"]
+        [#assign imageHtml][@imageResponsive rendition content imageClass false def.parameters /][/#assign]
+    [/#if]
+[/#if]
+
+
+[#-------------- RENDERING PART --------------]
+[#-- Rendering: Text/Image item --]
+&lt;div class="${divClass!}"${divID!}&gt;
+
+    [#-- Headline --]
+    [#if content.headline?has_content]
+        &lt;${headlineLevel}&gt;${content.headline!}&lt;/${headlineLevel}&gt;
+    [/#if]
+
+    [#-- Image above text --]
+    [#if hasImage &amp;&amp; imagePosition == "above"]
+        ${imageHtml}
+    [/#if]
+
+    [#-- Text --]
+    [#if content.text?has_content]
+        ${cmsfn.decode(content).text!}
+    [/#if]
+
+    [#-- Image below text --]
+    [#if hasImage &amp;&amp; imagePosition == "below"]
+        ${imageHtml}
+    [/#if]
+
+&lt;/div&gt;&lt;!-- end ${divClass} --&gt;
+</sv:value>
+        </sv:property>
+      </sv:node>
+    </sv:node>
+  </sv:node>
+</sv:node>

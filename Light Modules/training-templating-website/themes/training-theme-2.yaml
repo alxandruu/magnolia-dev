@@ -1,0 +1,28 @@
+cssFiles:
+  bootstrap:
+    media: screen
+    addFingerPrint: false
+    link: /.resources/training-templating-website/webresources/bootstrap.css
+  
+
+jsFiles:
+  jquery.min.js:
+    addFingerPrint: false
+    link: /.resources/training-templating-website/webresources/jquery.min.js
+  bootstrap.min.js:
+    addFingerPrint: false
+    link: /.resources/training-templating-website/webresources/bootstrap.min.js
+  
+
+imaging:
+  class: info.magnolia.templating.imaging.VariationAwareImagingSupport
+  variations:
+    large:
+      class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
+      width: 1600
+    medium:
+      class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
+      width: 800
+    small:
+      class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
+      width: 300

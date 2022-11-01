@@ -1,0 +1,54 @@
+subApps:
+  users:
+    actions:
+ 
+      import:
+        name: import
+        class: info.magnolia.ui.framework.action.OpenCreateDialogActionDefinition
+        label: Import
+        icon: icon-import
+        dialogName: ui-admincentral:import
+        availability:
+          root: true
+          nodeTypes:
+           - mgnl:folder
+          rules:
+            isNotDeletedRule:
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
+ 
+      export:
+        name: export
+        class: info.magnolia.ui.framework.action.ExportActionDefinition
+        label: Export
+        icon: icon-export
+        command: export
+        availability:
+          nodeTypes:
+           - mgnl:folder
+           - mgnl:user
+          rules:
+            isNotDeletedRule:
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
+ 
+    actionbar:
+      sections:
+       
+        - name: root
+          groups:
+            - name: importExportActions
+              items:
+                - name: import
+
+        - name: user
+          groups:
+             - name: importExportActions
+               items:
+                 - name: export
+
+        - name: folder
+          groups:
+             - name: importExportActions
+               items:
+                 - name: export
+                 - name: import
+      

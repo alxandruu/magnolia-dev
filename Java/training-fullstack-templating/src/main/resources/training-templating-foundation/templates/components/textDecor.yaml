@@ -1,0 +1,4 @@
+title: textDecor
+renderType: freemarker
+dialog: training-templating-foundation:components/textDecor
+templateScript: /training-templating-foundation/templates/components/textDecor.ftl

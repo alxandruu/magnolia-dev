@@ -1,0 +1,4 @@
+title: Text and Image (Using Image resizing)
+renderType: freemarker
+dialog: training-templating-foundation:components/teaser
+templateScript: /training-templating-website/templates/components/textImage.ftl

@@ -1,0 +1,5 @@
+!include:/training-templating-website/site-config/travel-availability-config.yaml
+
+'hierarchy':
+  'parents':
+    'travel-demo-multisite:pages/tourSportstation': 'travel-demo:pages/home'

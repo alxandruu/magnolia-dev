@@ -1,0 +1,14 @@
+label: First Page Dialog
+ 
+form:
+  properties:
+    header:
+      $type: textField
+      label: Header
+      description: "Define the header that is going to appear."
+    text:
+      $type: textField
+      label: Text
+      description: "Define the text that is going to appear."
+ 
+    

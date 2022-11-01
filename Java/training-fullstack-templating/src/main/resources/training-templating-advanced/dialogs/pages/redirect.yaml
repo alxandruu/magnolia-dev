@@ -1,0 +1,13 @@
+label: Redirect
+ 
+form:
+  properties:
+     
+    targetPageLink:
+      $type: pageLinkField
+      label: Redirect to Page
+      description: Link to a Page to redirect to. Leave empty and first child will be used automatically.
+    text:
+      $type: textField
+      label: Text
+      description: Link to a Page to redirect to. Leave empty and first child will be used automatically.

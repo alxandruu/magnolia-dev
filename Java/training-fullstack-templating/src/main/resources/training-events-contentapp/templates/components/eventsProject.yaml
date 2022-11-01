@@ -1,0 +1,4 @@
+title: Events Project
+renderType: freemarker
+templateScript: /training-events-contentapp/templates/components/eventsProject.ftl
+      

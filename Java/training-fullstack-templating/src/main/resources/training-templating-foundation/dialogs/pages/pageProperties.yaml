@@ -1,0 +1,6 @@
+width: medium
+form:
+  properties:
+  - name: title
+    i18n: true
+    $type: textField

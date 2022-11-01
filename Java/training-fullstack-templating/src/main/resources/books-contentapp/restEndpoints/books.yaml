@@ -1,0 +1,19 @@
+class: info.magnolia.rest.delivery.jcr.v2.JcrDeliveryEndpointDefinition
+workspace: books
+includeSystemProperties: false
+depth: 3
+nodeTypes:
+  - book
+childNodeTypes:
+  - mgnl:contentNode
+
+references:
+  - name: imageLink
+    propertyName: imageLink
+    referenceResolver:
+      class: info.magnolia.rest.reference.dam.AssetReferenceResolverDefinition
+      assetRenditions:
+        - small ## Used from the 'training-templating-website' module's theme
+        - medium ## Used from the 'training-templating-website' module's theme
+        - large ## Used from the 'training-templating-website' module's theme
+        - nonexistent ## Fallback if no image variation existing.

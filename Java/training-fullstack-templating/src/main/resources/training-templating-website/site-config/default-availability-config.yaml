@@ -1,0 +1,63 @@
+
+# Origin OTB config. Added for backward compatibility.
+# I see only micro sites as use cases
+'enableAll': 'false'
+
+# Origin OTB config. Added for backward compatibility.
+# is very static
+'enableTemplates': 'false'
+'templates':
+  'home':
+    'id': 'training-templating-website:pages/home'
+  'default':
+    'id': 'training-templating-website:pages/default'
+  'special':
+    'id': 'training-templating-website:pages/special'
+  'events':
+    'id': 'training-events-contentapp:pages/events'
+
+# Origin OTB config. Added for backward compatibility.
+# for all 'freemarker' -> none 'site' templates
+'enableByRenderType': 'true'
+'enableAllWithRenderType':
+  'freemarker': 'freemarker'
+
+#Custom implementation
+'enableHierarchy': 'true'
+'hierarchy':
+  'levelsEnabled': 'false'
+  'parentsEnabled': 'true'
+  'levels':
+    # using fix template id's
+    '1': 'training-templating-website:pages/home; training-templating-advanced:pages/redirect; travel-demo:pages/home'
+    '2': 'training-templating-website:pages/default; training-events-contentapp:pages/events'
+    '3': 'training-templating-website:pages/default; training-templating-website:pages/special'
+    '4-5': 'training-templating-website:pages/default'
+    # using more dynamic template types
+    '1': 'training-home; training-redirect'
+    '2': 'training-default; training-events'
+    '3': 'training-default; training-special'
+    '4-5': 'training-default'
+  'parents':
+    # using more dynamic template types
+    'training-redirect': 'ROOT; training-redirect'
+    'training-home': 'ROOT; training-redirect'
+    'travel-demo:pages/home': 'ROOT'
+    'training-default': 'training-home; training-default'
+    'training-special': 'training-default'
+    'training-events': 'training-home; training-default'
+    # using fix template id's
+    'training-templating-advanced:pages/redirect': 'ROOT; training-templating-advanced:pages/redirect'
+    'training-templating-website:pages/training-home': 'ROOT; training-templating-advanced:pages/redirect'
+    'training-templating-website:pages/training-default': 'training-templating-website:pages/training-home; training-templating-website:pages/training-default'
+    'training-templating-website:pages/training-special': 'training-templating-website:pages/training-default'
+    'training-templating-website:pages/training-events': 'training-templating-website:pages/training-home; training-templating-website:pages/training-default'
+    # for travel
+    'tours:pages/categoryOverview': 'travel-demo:pages/home'
+    'tours:pages/destinationCatOverview': 'travel-demo:pages/home'
+    'tours:pages/tour': 'travel-demo:pages/home'
+    'travel-demo:pages/pur': 'travel-demo:pages/standard'
+    'travel-demo:pages/aboutDemo': 'travel-demo:pages/standard'
+    'travel-demo:pages/searchResultPage': 'travel-demo:pages/standard'
+    'travel-demo:pages/standard': 'travel-demo:pages/home; travel-demo:pages/standard'
+    

@@ -1,0 +1,4 @@
+title: Bookstores List
+renderType: freemarker
+templateScript: /bookstore-contentapp/templates/components/bookstoresList.ftl
+modelClass: info.magnolia.training.fullstack.bookstore.contentapp.components.BookstoresListComponentModel

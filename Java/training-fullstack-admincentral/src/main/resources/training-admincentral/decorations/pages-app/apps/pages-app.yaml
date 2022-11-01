@@ -1,0 +1,43 @@
+subApps:
+  browser:
+    actions:
+      delete:
+        $type: markAsDeletedAndInformAction
+      toJcrBrowserApp: &toJcrBrowserAppActionConfiguration
+        $type: openSubAppAction
+        label: View in JCR-Browser App
+        icon: icon-view
+        appName: jcr-browser-app
+        subAppId: browser
+        availability:
+          writePermissionRequired: false
+          access:
+            roles:
+              superuser: superuser
+ 
+    actionbar:
+      sections:
+        crud:
+          groups: &toJcrBrowserAppActionbarGroups
+ 
+            edit:
+              items:
+                toJcrBrowserApp:
+                  name: toJcrBrowserApp
+                                   
+  detail:
+    actions:
+      toJcrBrowserApp:
+        <<: *toJcrBrowserAppActionConfiguration
+        useContentSubNodes: true
+ 
+    actionbar:
+      sections:
+        areaActions:
+          groups: *toJcrBrowserAppActionbarGroups
+        componentActions:
+          groups: *toJcrBrowserAppActionbarGroups
+        pageActions:
+          groups: *toJcrBrowserAppActionbarGroups        
+        pagePreviewActions:
+          groups: *toJcrBrowserAppActionbarGroups

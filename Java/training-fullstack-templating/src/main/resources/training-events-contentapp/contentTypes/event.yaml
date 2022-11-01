@@ -1,0 +1,55 @@
+datasource:
+  workspace: events
+  autoCreate: true
+
+model:
+  nodeType: event
+  properties:
+    - name: location
+    - name: description
+      type: richText
+      required: true
+    - name: eventType
+      required: true
+      options:
+        - name: workEvent
+          value: workEvent
+          label: Work Event
+        - name: holiday
+          value: holiday
+          label: Holiday
+        - name: familyEvent
+          value: familyEvent
+          label: Family Event
+        - name: other
+          value: other
+          label: Other
+    - name: date
+      required: true
+      type: Date
+    - name: imageLink
+      required: true
+      type: asset
+    - name: contacts
+      type: contactData
+      multiple: true
+    - name: addressess
+      type: addressData
+      multiple: true
+  
+  subModels:
+    - name: contactData
+      # #nodeType: eventContact #Does not work until MGNLUI-6010 is resolved
+      properties:
+        - name: firstName
+        - name: familyName
+        - name: email
+        - name: phoneNumber
+        - name: mobileNumber
+    - name: addressData
+      # #nodeType: eventAddress #Does not work until MGNLUI-6010 is resolved
+      properties:
+        - name: street
+        - name: city
+        - name: postalCode
+        - name: country

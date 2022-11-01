@@ -1,0 +1,55 @@
+label: Training - Default Page Properties
+ 
+form:
+  properties:
+    title:
+      $type: textField
+      label: Page Title
+      description: Define the Page's title.
+      required: true
+
+    abstract:
+      $type: textField
+      label: Abstract
+      description: Add an Abstract of the Page.
+      rows: 5
+
+    keywords:
+      $type: textField
+      label: Keywords
+      description: The keywords used in the html header in the meta tag 'meta name=keywords'.
+      rows: 3
+      i18n: true
+
+    description:
+      $type: textField
+      label: Description
+      description: The description used in the html header in the meta tag 'meta name=description'. Fallback is the page's abstract.
+      rows: 5
+      i18n: true
+    imageIcon:
+      $type: damLinkField
+      label: Image Icon
+      description: Choose an Image from the Assets App.
+    checkboxShowPage:
+      $type: checkBoxField
+      label: Show in navbar
+      buttonLabel: Select if the page is displayed in the navbar
+      
+ 
+  layout:
+    $type: tabbedLayout
+    tabs:
+      tabMain:
+        label: Page Content
+        fields:
+          - name: title
+          - name: abstract
+          - name: imageIcon
+          - name: checkboxShowPage
+ 
+      tabMeta:
+        label: Page Meta Data
+        fields:
+          - name: keywords
+          - name: description

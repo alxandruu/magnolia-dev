@@ -1,0 +1,9 @@
+form:
+  properties:
+    titleLeft:
+      $type: textField
+ 
+    titleRight:
+      $type: textField
+ 
+    

@@ -1,0 +1,4 @@
+title: Ultra-Training - My First Page
+renderType: freemarker
+dialog: ultra-training-templating-foundation:pages/first
+templateScript: /ultra-training-templating-foundation/templates/pages/first.ftl

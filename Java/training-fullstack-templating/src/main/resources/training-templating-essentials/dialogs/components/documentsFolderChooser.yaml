@@ -1,0 +1,19 @@
+!inherit:ui-framework-jcr:chooser ## Including the original default chooser-dialog from the 'ui-framework-jcr'.
+ 
+label: Document Folder Chooser
+ 
+actions:
+  choose:
+    availability:
+      root: false
+      nodeTypes:
+       - mgnl:folder ## Only allowing mgnl:folder to be choose-able. Not an assets.
+ 
+workbenchChooser:
+  workbench:
+      contentViews:
+        - name: tree
+          columns:
+            jcrName:
+              nodeTypeToIcon:
+                mgnl:asset: icon-file-image

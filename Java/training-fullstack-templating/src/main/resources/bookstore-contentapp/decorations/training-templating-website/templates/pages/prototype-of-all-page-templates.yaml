@@ -1,0 +1,8 @@
+areas:
+  main:
+    availableComponents:
+      bookstoresList:
+        id: bookstore-contentapp:components/bookstoresList
+    
+ 
+  

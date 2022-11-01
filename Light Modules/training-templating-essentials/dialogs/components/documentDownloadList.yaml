@@ -1,0 +1,15 @@
+label: Document Download List
+ 
+form:
+  properties:
+ 
+    targetFolderId:
+      $type: linkField
+      label: Document Folder
+      description:  Choose a document folder to link to.
+      required: true
+      datasource:
+        $type: jcrDatasource
+        workspace: dam
+      chooserId: 'training-templating-essentials:components/documentsFolderChooser'
+      #chooserId: 'ui-framework-jcr:chooser' ## would be the default when not defining any 'choooserId' value.

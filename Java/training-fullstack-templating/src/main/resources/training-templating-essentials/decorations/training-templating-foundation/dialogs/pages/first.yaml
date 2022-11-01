@@ -1,0 +1,6 @@
+
+form:
+  properties:
+       
+    title:
+      required: true

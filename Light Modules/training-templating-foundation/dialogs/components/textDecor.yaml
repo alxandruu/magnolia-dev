@@ -1,0 +1,49 @@
+label: Text Decor
+ 
+form:
+  properties:
+    text:
+      $type: textField
+      label: Text
+      description: "Define the text that is going to appear."
+      required: true
+    rich_text:
+      label: Rich Text editor
+      $type: richTextField
+      height: 350
+    imageLink:
+      $type: damLinkField
+      label: Image Link
+      description: Choose an Image from the Assets App.
+    imageCaption:
+      $type: textField
+      label: Image Caption
+      description: Define a caption for the image.
+    link:
+      $type: linkField
+      label: Page Link
+      datasource:
+        $type: jcrDatasource
+        workspace: training
+
+  layout:
+    $type: tabbedLayout
+    tabs:
+      tabMain:
+        label: Text Content
+        fields:
+          - name: text
+          - name: rich_text
+ 
+      tabImage:
+        label: Image Content
+        fields:
+          - name: imageLink
+          - name: imageCaption
+
+      tabLinks:
+        label: Links Content
+        fields:
+          - name: linkField          
+ 
+   

@@ -1,0 +1,35 @@
+[#assign eventsRoot = cmsfn.contentByPath("/customers/", "events")]
+
+[#macro listEvents events ulClass=""]
+   [#list cmsfn.children(events,"event")![]]
+   <ul class="nav navbar-nav">
+    <li class="dropdown">
+      <a  > Events Complex</a>
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >
+                    <span class="caret"></span>
+                </a>
+      <ul class="dropdown-menu">
+        [#items as event]
+          [#assign linkWithSelector = ensureLinkEndsWithDotHtml(pageLink)?replace('.html','~'+event.@name+'~.html')]
+          <li><a href="${linkWithSelector}">Event #${event_index+1}:   [#if event.date?has_content][${event.date?string["dd.MM.YY"]}][/#if]</a></li>
+        [/#items]
+      </ul>
+    </li>
+    </ul>
+  [/#list]
+[/#macro]
+
+[#function ensureLinkEndsWithDotHtml link]
+ 
+    [#if !link?contains(".html")]
+        [#if link?ends_with("/")]
+            [#assign link = link?keep_before_last('/')]
+        [/#if]
+        [#return link+'.html']
+    [/#if]      
+     
+    [#return link]
+     
+[/#function]
+
+[@listEvents events=eventsRoot /]

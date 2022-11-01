@@ -1,0 +1,42 @@
+!content-type:event
+name: events
+label: Events
+enabled: true ## Optional: Default is 'true'
+icon: icon-notifications-app
+## Optional as its auto created from the contentType ##
+permissions:
+  roles:
+    # superuser: superuser ## Optional -> is added automatically
+    editors: travel-demo-editor ## Example of additional added role used for user 'eric/eric'
+
+
+## Optional as its auto created from the contentType ##
+datasource:
+  $type: jcrDatasource
+  workspace: events
+  includeProperties: false
+  #previewDefinition: ## Could be used if a binary was stored directly on the node (not using Asset references) ##
+    #nodeName: image
+  allowedNodeTypes:
+    - event
+    - mgnl:folder
+  describeByProperty: name ## Will display a events's name instead of its JCR path when linking to it, e.g. 'Event One' instead of /Event-One ##
+
+subApps:
+  detail:
+    form:
+      properties:
+        location:
+          rows: 3
+        date:
+          time: true
+          timeFormat: HH:mm # 15:09
+  browser:
+    actions:
+      activate:
+        $type: openDialogAction
+        dialogId: workflow-pages:publish
+        catalog: workflow
+        command: activate
+      addItem:
+        label: Add Event

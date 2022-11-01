@@ -1,0 +1,6 @@
+version: 1.0.0
+dependencies:
+  training-templating-website:
+    version: 1.0.0/*
+  books-contentapp:
+    version: 1.0.0/*

@@ -1,0 +1,8 @@
+class: info.magnolia.rest.delivery.jcr.v2.JcrDeliveryEndpointDefinition
+workspace: bookstores
+includeSystemProperties: false
+depth: 3
+nodeTypes:
+  - bookstore
+
+

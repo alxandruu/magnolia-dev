@@ -1,0 +1,31 @@
+datasource:
+  workspace: books
+  autoCreate: true
+
+model:
+  nodeType: book
+  properties:    
+    - name: description
+      type: richText
+      required: true
+    - name: author
+    - name: bookstore      
+      type: reference:bookstores
+    - name: bookType
+      required: true
+      options:
+        - name: fantasyBook
+          value: fantasyBook
+          label: Fantasy Book
+        - name: scifiBook
+          value: scifiBook
+          label: Sci-Fi Book
+        - name: mysteryBook
+          value: mysteryBook
+          label: Mystery Book
+    - name: releaseDate
+      required: true
+      type: Date
+    - name: imageLink
+      required: true
+      type: asset

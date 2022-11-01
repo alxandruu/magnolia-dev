@@ -1,0 +1,15 @@
+label: Helloworld
+name: helloworld
+appClass: info.magnolia.ui.framework.app.BaseApp
+icon: icon-web-resources-app
+class: info.magnolia.ui.api.app.AppDescriptor
+enabled: true ## Optional: Default is 'true'
+
+subApps:
+  main:
+    label: Helloworld
+    subAppClass: info.magnolia.training.fullstack.admincentral.vaadin.apps.helloworld.HelloWorldMainSubApp
+    class: info.magnolia.ui.api.app.registry.ConfiguredSubAppDescriptor
+  greeter:
+    subAppClass: info.magnolia.training.fullstack.admincentral.vaadin.apps.helloworld.HelloWorldGreeterSubApp
+    class: info.magnolia.ui.api.app.registry.ConfiguredSubAppDescriptor

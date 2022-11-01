@@ -1,0 +1,1 @@
+Modulo básico en la que contiene la plantilla y su dialogo correspondiente.

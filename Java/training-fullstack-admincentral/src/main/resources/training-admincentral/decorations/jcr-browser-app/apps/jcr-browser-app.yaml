@@ -1,0 +1,42 @@
+subApps:
+  browser:
+    actions:
+      openInPagesBrowserSubApp: &toPagesAppActionConfiguration
+        $type: openSubAppAction
+        label: View in Pages-Browser App
+        icon: icon-view
+        appName: pages-app
+        subAppId: browser
+        availability:
+          properties: true
+          writePermissionRequired: false
+          access:
+            roles:
+              superuser: superuser
+                     
+      openInPagesDetailSubApp:
+        <<: *toPagesAppActionConfiguration
+        label: View in Pages-Detail App
+        subAppId: detail
+        addToParameters: ':edit'
+ 
+  
+    actionbar:
+      sections:
+        nodes:
+          groups:
+            addingActions:
+              items:
+                openInPagesBrowserSubApp:
+                  name: openInPagesBrowserSubApp
+                openInPagesDetailSubApp:
+                  name: openInPagesDetailSubApp
+                   
+        properties:
+          groups:
+            addingActions:
+              items:
+                openInPagesBrowserSubApp:
+                  name: openInPagesBrowserSubApp
+                openInPagesDetailSubApp:
+                  name: openInPagesDetailSubApp

@@ -1,0 +1,3 @@
+'availability-using-yaml':
+  'class': 'info.magnolia.training.fullstack.templating.templates.availability.HierarchicalConfiguredSiteTemplateAvailability'
+  'configurationResourcePath': '/training-templating-website/site-config/travel-availability-config.yaml'

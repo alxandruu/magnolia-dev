@@ -1,0 +1,24 @@
+datasource:
+  workspace: bookstores
+  autoCreate: true
+
+model:
+  nodeType: bookstore
+  properties:    
+    - name: description
+      type: richText
+      i18n: true
+      required: true
+    - name: location
+      type: addressData
+      i18n: true
+    - name: publicStore
+      type: Boolean
+
+  subModels:
+    - name: addressData
+      properties:
+        - name: street
+        - name: city
+        - name: postalCode
+        - name: country

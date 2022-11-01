@@ -1,0 +1,11 @@
+subApps:
+  detail:
+    editor:
+      form:
+        tabs:
+          - name: tour
+            fields:
+              - name: eventContact
+                fieldType: contactSelectField
+                label: Tours's Contact
+                description: Choose the contact of this tour.

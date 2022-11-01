@@ -1,0 +1,4 @@
+title: Books Details
+renderType: freemarker
+templateScript: /books-contentapp/templates/components/bookDetails.ftl
+      

@@ -1,0 +1,41 @@
+dialog: training-templating-website:pages/default
+templateScript: training-templating-website/templates/pages/default.ftl
+visible: false
+ 
+areas:
+  htmlHeader:
+    type: noComponent
+    createAreaNode: false
+    templateScript: /training-templating-website/templates/areas/htmlHeaderArea.ftl
+  navigation:
+    type: noComponent
+    createAreaNode: false
+    templateScript: /training-templating-website/templates/areas/navigationArea.ftl
+  pageHeader:
+    type: noComponent
+    createAreaNode: false
+    dialog: training-templating-website:pages/defaultPageHeader
+    templateScript: /training-templating-website/templates/areas/pageHeaderArea.ftl
+  main:
+    type: list
+    availableComponents:
+      textImage:
+        id: training-templating-foundation:components/textImage
+      teaser:
+        id: training-templating-foundation:components/teaser
+      textImageVariation:
+        id: training-templating-website:components/textImage
+ 
+  footer:
+    type: list
+    templateScript: /training-templating-website/templates/areas/footerArea.ftl
+    availableComponents:
+      textImage:
+        id: training-templating-foundation:components/textImage
+      teaser:
+        id: training-templating-foundation:components/teaser
+    maxComponents: 4
+    editable: false
+    inheritance:
+      enabled: true
+      components: all

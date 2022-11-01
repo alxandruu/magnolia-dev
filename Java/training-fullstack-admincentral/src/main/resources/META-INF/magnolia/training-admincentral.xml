@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+  <name>training-admincentral</name>
+  <displayName>${project.name}</displayName>
+  <description>${project.description}</description>
+  <class>info.magnolia.training.fullstack.admincentral.TrainingAdminCentralModule</class>
+  <versionHandler>info.magnolia.training.fullstack.admincentral.setup.TrainingAdminCentralModuleVersionHandler</versionHandler>
+  <version>${project.version}</version>
+  
+  <components>
+    <id>app-helloworld</id>
+  </components>
+  <components>
+    <id>app-helloworld-main</id>
+    <component>
+      <type>info.magnolia.training.fullstack.admincentral.vaadin.apps.helloworld.HelloWorldMainSubAppView</type>
+      <implementation>info.magnolia.training.fullstack.admincentral.vaadin.apps.helloworld.HelloWorldMainSubAppViewImpl</implementation>
+    </component>
+  </components>
+  <components>
+    <id>app-helloworld-greeter</id>
+    <component>
+      <type>info.magnolia.training.fullstack.admincentral.vaadin.apps.helloworld.HelloWorldGreeterSubAppView</type>
+      <implementation>info.magnolia.training.fullstack.admincentral.vaadin.apps.helloworld.HelloWorldGreeterSubAppViewImpl</implementation>
+    </component>
+  </components>
+
+  <dependencies>
+    <dependency>
+      <name>core</name>
+      <version>6.2/*</version>
+    </dependency>
+    <!-- A good way to ensure, the whole EE package is installed. -->
+    <dependency>
+      <name>multisite</name>
+      <version>2.1.1/*</version>
+    </dependency>
+  </dependencies>
+  
+</module>

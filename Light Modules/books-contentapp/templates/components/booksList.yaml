@@ -1,0 +1,4 @@
+title: Books List
+renderType: freemarker
+templateScript: /books-contentapp/templates/components/booksList.ftl
+      
